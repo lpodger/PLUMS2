@@ -1,0 +1,2075 @@
+/*!
+Theme Name: PLUMS
+Theme URI: http://underscores.me/
+Author: Lachlan Podger
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: plums
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+plums is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+	 ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Sections
+	 ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+	margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+	display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+/* Grouping content
+	 ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+/* Text-level semantics
+	 ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+	background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Embedded content
+	 ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+	border-style: none;
+}
+
+/* Forms
+	 ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+	overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *		`fieldset` elements in all browsers.
+ */
+legend {
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+	overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+/* Interactive
+	 ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+	display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+	display: list-item;
+}
+
+/* Misc
+	 ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+	display: none;
+}
+
+/* Box sizing
+--------------------------------------------- */
+
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #404040;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", courier, monospace;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/* Elements
+--------------------------------------------- */
+body {
+	background: #fff;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+	color: white;
+}
+
+a:visited {
+	color: white;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: white;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/* Forms
+--------------------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	line-height: 1;
+	padding: 0.6em 1em 0.4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Navigation
+--------------------------------------------- */
+.main-navigation {
+	display: block;
+	width: 100%;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	display: block;
+	left: auto;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main
+.posts-navigation,
+.site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+	display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: end;
+	flex: 1 0 50%;
+}
+
+/* Posts and pages
+--------------------------------------------- */
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0 0 0em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/* Comments
+--------------------------------------------- */
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/* Widgets
+--------------------------------------------- */
+.widget {
+	margin: 0 0 1.5em;
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/* Media
+--------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/* Captions
+--------------------------------------------- */
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/* Galleries
+--------------------------------------------- */
+.gallery {
+	margin-bottom: 1.5em;
+	display: grid;
+	grid-gap: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
+.gallery-columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+	grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+	grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+	grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+	grid-template-columns: repeat(9, 1fr);
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+
+/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	display: none;
+}
+
+/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: white;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/* Alignments
+--------------------------------------------- */
+.alignleft {
+
+	/*rtl:ignore*/
+	float: left;
+
+	/*rtl:ignore*/
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignright {
+
+	/*rtl:ignore*/
+	float: right;
+
+	/*rtl:ignore*/
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.5em;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button,
+textarea,
+input,
+select,
+span,
+label,
+a {
+  -webkit-tap-highlight-color: white;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*General*/	
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main { 
+	flex: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+ }
+ 
+ img {
+	display: block;
+	max-width: 100%;
+ }
+ 
+h1, h2, h3, p, li, a, label {
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 1px;
+}
+
+h2 {
+	font-weight: 800;
+	font-size: 1.7em;
+}
+
+p {
+	margin: 0 0 1.5em 0;
+	max-width: 70ch;
+	font-weight: 500;
+}
+
+header {
+	background-color: #703E94;
+	display: flex;
+	justify-content: center;
+	padding: 0 1%;
+	flex-direction: column;
+}
+
+.entry-header {
+	background-color: white;
+	margin-top: 1em;
+	text-align: center;
+}
+
+.entry-content {
+	display: grid;
+	margin-top: 0;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+	padding: 0 5%;
+	grid-template-columns: repeat(1, auto);
+}
+.entry-content a {
+	font-weight: 700;
+    text-decoration: none;
+    border: none;
+    border-radius: 23px;
+    padding: 1em;
+	margin: 1em;
+    box-shadow: 0px 2px 3px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    display: inline-block;
+    min-width: 169px;
+    color: white;
+    background-color: #703E94;
+    text-align: center;
+    align-self: center;
+}
+
+header nav ul {
+	margin-bottom: 0;
+}
+
+nav {
+	min-height: 76px;
+	background-color: #703E94;
+	display: flex;
+	align-items: center;
+	display: none;
+	justify-content: flex-end;
+	margin-bottom: 0.5em;
+}
+
+#menu-primary {
+	display: flex;
+	gap: 10%;
+}
+
+nav ul {
+	list-style-type: none;
+	display: flex;
+	gap: 10%;
+	justify-content: end;
+	flex-direction: column;
+    padding-left: 0;
+}
+
+#pencet{
+	display:flex;
+	align-items:center;
+	flex-direction:column;
+	cursor:pointer;
+	position: absolute;
+    right: 2%;
+	top: 1%;
+  }
+  
+  #pencet span{
+	background-color:ghostwhite;
+	width:2em;
+	height:.2em;
+	margin:0.26em 0;
+	display:block;
+	transition: all .4s ease;
+	transform-origin:0 0;
+  }
+  
+  .Diam span:nth-child(1) {
+	transform: rotate(45deg) translate(1px, -1px);
+  }
+  
+  .Diam span:nth-child(2) {
+	Transform: scaleX(0);
+  }
+  
+  .Diam span:nth-child(3) {
+	transform: rotate(-45deg) translate(1px, 0);
+  }
+
+  .show {
+	display: flex;
+  }
+
+nav ul  li {
+	padding: 0.5em;
+}
+nav ul  li a {
+	text-decoration: none;
+	font-size: 0.9em;
+	color: white;
+}
+
+nav ul  li a:hover {
+	text-decoration:underline;
+	transition: 0.3s;
+}
+
+.logo {
+	text-decoration: none;
+	font-weight: 800;
+	color: white;
+	font-size: xx-large;
+}
+
+.button {
+	font-weight: 700;
+	text-decoration: none;
+	border: none;
+	border-radius: 23px;
+	padding: 1em;
+	box-shadow: 0px 2px 3px rgb(0 0 0 / 25%);
+	cursor: pointer;
+	display: inline-block;
+	min-width: 169px;
+	color: white;
+	background-color: #703E94 !important;
+	text-align: center;
+	align-self: center;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.entry-content a:hover {
+	text-decoration: underline;
+}
+
+.qmn_btn {
+	font-weight: 700;
+	text-decoration: none;
+	border: none;
+	border-radius: 23px;
+	padding: 1em;
+	box-shadow: 0px 2px 3px rgb(0 0 0 / 25%);
+	cursor: pointer;
+	display: inline-block;
+	min-width: 169px;
+	color: white;
+	background-color: #703E94;
+	text-align: center;
+}
+.button:hover {
+	transition: 0.3s;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.tilt-1 {
+	transform: rotateY(180deg);
+	background-color: white;
+    display: block;
+	width: 100%;
+}
+
+.tilt-2 {
+	transform: rotate(180deg);
+	display: block;
+	background-color: white;
+	margin: -1px 0 -1px 0;
+	width: 100%;
+}
+
+footer {
+	min-height: 100px;
+	font-size: 0.8em;
+	background-color: #703E94;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#comments {
+	display: none;
+}
+
+.entry-footer {
+	display: none;
+}
+
+.post-navigation {
+	display: none;
+}
+
+footer nav {
+	min-height: 0;
+}
+
+footer p {
+	margin: 0;
+}
+
+a:active {
+    outline: none;
+    box-shadow: none !important;
+}
+
+/*Utility*/
+.align-center {
+	text-align: center;
+}
+
+/*Landing*/
+.carousel-caption {
+	right: 0 !important;
+	left: 0% !important;
+}
+
+/*Home*/
+
+nav ul {
+	margin-left: 0;
+}
+
+
+.hero-section {
+	padding: 1.5em 1.5em 6em 1.5em;
+	display: flex;
+    flex-direction: column-reverse;
+	background-color: #89CAC7;
+}
+
+.hero-text {
+	font-size: 5.6em;
+	font-weight: 800;
+}
+
+.hero-text h2 {
+	letter-spacing: 2px;
+}
+
+.intro-text-container {
+	position: relative;
+	color: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.intro-text-container img {
+    margin-top: 2em;
+}
+
+em {
+	font-size: 1.8em;
+	color: #703E94;
+	font-weight: 800;
+}
+
+.btn-1 {
+	position: absolute;
+	top: 96%;
+}
+
+.p1 {
+	margin: 1.5em 0em 4em 0em;
+}
+
+.why-plums-container {
+	max-width: 100%;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	color: black;
+	position: relative;
+}
+
+.why-plums-container h2 {
+	align-self: center;
+	margin: 1.5em 0 1.3em 0;
+}
+
+.section-2 {
+	padding: 1em 1.5em 10em 1.5em;
+	background-color: white;
+    display: flex;
+    flex-direction: column;
+	align-items: center;
+}
+
+.btn-2 {
+	position: absolute;
+	top: 110%;
+}
+
+.card-container {
+	position: relative;
+	padding: 5em 1.5em 10em 1.5em;
+	background-color: #89CAC7;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card {
+	border-radius: 40px;
+    background-color: white;
+	max-width: 362px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	padding: 2em 1.5em 1em 1.5em;
+	box-shadow: 0px 2px 3px rgb(0 0 0 / 25%);
+	justify-content: center;
+	margin-bottom: 3.5em;
+	flex: 1;
+	height: 535px;
+}
+
+.card h2 {
+	padding: 1em 0 1em 0;
+}
+
+
+.btn-3 {
+	position: absolute;
+	top: 93%;
+}
+
+/*Question*/	
+
+.quizzes-container {
+	padding-bottom: 4em;
+    background-color: white;
+	padding-top: 8em;
+	position: relative;
+}
+
+.qsm_quiz {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	min-height: 100vh;	
+}
+
+@layer { 
+	.qmn_quiz_container .qmn_btn {background-color: #703E94 !important;} 
+ }
+
+ .quiz_section input[type="email"] {
+	width: 100% !important;
+ }
+
+.qmn_results_page {
+	margin: 0 10%;
+	padding-top: 0.5em;
+}
+
+.mlw_error_message_bottom {
+	display: none !important;
+}
+
+.qsm-results-page p, span {
+	font-family: 'Montserrat', sans-serif; 
+}
+
+.rocket {
+	max-width: 90%;
+    position: absolute;
+    margin-left: 5%;
+    margin-right: 5%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: -28%;
+}
+
+.mlw_qmn_timer {
+	bottom: 20px !important;
+}
+
+form .qmn_quiz_container .qmn_btn {
+	background-color:#703E94 !important;
+	font-weight: 700;
+    text-decoration: none;
+    border: none;
+    border-radius: 23px;
+    padding: 1em;
+    margin: 1em;
+    box-shadow: 0px 2px 3px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    display: inline-block;
+    min-width: 169px;
+    color: white;
+    text-align: center;
+    align-self: center;
+}
+
+.qsm-progress-bar .progressbar-text {
+	color: #703E94 !important;
+}
+
+[type="checkbox"], [type="radio"] {
+	transform: scale(1.5);
+}
+
+.qsm-progress-bar svg path {   stroke:#703E94 !important;
+}
+
+.entry header {
+	margin-top: 1em;
+}
+
+.qsm_questions_answers_section {
+	padding-top: 2em;
+}
+
+.qsm-results-page>:first-child {
+	font-size: 1.5em;
+}
+
+.question-container {
+	display: flex;
+	flex-direction: column-reverse;
+	padding: 1.5em 1.5em 2.5em 1.5em;
+	position: relative;
+}
+
+.question-card {
+	position: relative;
+	max-width: 420px;
+	display: flex;
+    flex-direction: column;
+	cursor: pointer;
+	align-self: center;
+	margin-bottom: 3.5em;
+}
+
+.progress-bar-container {
+	display: flex;
+    align-items: center;
+	margin: 2em 0 1em 0;
+	justify-content: space-between;
+}
+
+.progress-bar-container img {
+	max-width: 30%;
+}
+
+.question-card p {
+	font-weight: 600;
+}
+
+label {
+	font-size: 1rem;
+	font-weight: 600;
+	margin-bottom: 2em;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 2em;
+  margin-bottom: 3em;
+  cursor: pointer;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+  border: solid 2px purple;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #703E94;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+ 	top: 4px;
+	left: 4px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+.btn-4 {
+	position: absolute;
+	top: 100%;
+	min-width: 169px;
+}
+
+/*Results*/
+
+.results {
+	background-color: white;
+}
+
+.results-hero {
+	display: flex;
+    flex-direction: column;
+    background-color: #89CAC7;
+	padding: 2em 1em 8em 1em;
+}
+
+.results-hero img {
+	max-width: 500px !important;
+}
+
+.results-card-container {
+    padding: 4em 1.5em 2em 1.5em;
+}
+
+.results-container {
+	padding: 11em 1em 5em 1em;
+	position: relative;
+	background-color: white;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+	gap: 5em;
+}
+
+.results-card {
+	border-radius: 20px;
+    background-color: white;
+	min-height: 600px;
+	max-width: 420px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	padding: 1em;
+	box-shadow: 0px 2px 3px rgb(0 0 0 / 25%);
+	justify-content: center;
+	padding-bottom: 1em;
+}
+
+.results-card h2 {
+    margin: 1em 0 1em 0;
+}
+
+.level-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 5.5em;
+}
+
+.arrow-1 {
+	display: none;
+}
+
+.arrow-2 {
+	display: none;
+}
+
+.grade {
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    translate: -50%;
+}
+
+.btn-6 {
+	position: absolute;
+	bottom: 0;
+}
+
+.btn-7 {
+	position: absolute;
+	bottom: 0;
+}
+
+.btn-8 {
+	position: absolute;
+	bottom: 0;
+}
+
+.results-form-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.results-form-section {
+	max-width: 445px;
+	padding: 0 1.5em 0 1.5em;
+	margin-bottom: 3.1em;
+}
+
+.results-form-section p {
+	font-weight: 800;
+}
+
+
+.login-form-section p {
+	font-weight: 800;
+}
+
+.input-container {
+	justify-content: space-between;
+	display: flex;
+	align-items: center;
+}
+
+.to-do-list {
+    margin-top: 2rem;
+	margin-bottom: 0;
+    padding: 1rem;
+    border: solid 3px #703E94;
+    border-radius: 20px;
+	text-align: center;
+	font-size: 0.7em;
+}
+
+.arrow-3 {
+	display:none;
+}
+
+/* Full-width inputs */
+input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid #703E94;
+  border-radius: 50px;
+  width: 48%;
+  width: 100%;
+}
+
+.submit-button {
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 1px;
+	font-weight: 700;
+    border: none;
+    color: white;
+    font-size: 20px;
+	background-color: #703E94;
+	display: flex !important;
+}
+
+fieldset {
+	border: none;
+	margin-top: 2em;
+}
+
+fieldset label {
+	margin: 0 1em 0 0;
+	font-size : 1.1em;
+	font-weight: 800;
+	align-self: flex-start;
+}
+
+legend {
+	display: none;
+}
+
+fieldset:hover {
+    border-color: #703E94 ;
+}
+
+.submit {
+	margin: 2.5em auto 0 auto;
+	width: 70%;
+	text-align: center;
+	display: flex;
+    justify-content: center;
+}
+
+.form {
+	margin-bottom: 0.5em;
+	flex-direction: column;
+}
+
+/*Large-Mobile*/
+@media only screen and (min-width: 380px) { 
+
+.rocket {
+    top: -34%;
+}
+}
+
+/*Tablet*/
+@media only screen and (min-width: 768px) { 
+
+	/*Home Tablet*/
+	nav ul li a {
+		font-size: 1em;
+	}
+
+	nav {
+		display: flex;
+		margin-bottom: 0;
+	}
+
+	#pencet {
+		display: none;
+	}
+
+	header {
+		flex-direction: row;
+		align-content: center;
+	}
+
+	.span-logo {
+		margin-right: auto;
+		align-self: center;
+	}
+
+	nav ul {
+		flex-direction: row;
+	}
+
+	
+	footer nav ul { 
+		display: none;
+	}
+	
+	footer {
+		justify-content: center;
+	}
+	
+	.hero-section {
+		padding: 1.5em 6em 6em 6em;
+		align-items: center;
+	}
+	
+	.hero-section img {
+		max-width: 600px !important;
+	}
+	
+	.section-2 {
+		padding: 1.5em 6em 6em 6em;
+	}
+	
+	/*Question Tablet*/
+	.question-container {
+		padding: 1.5em 6em 2.5em 6em;
+		align-items: center;
+	}
+	
+	.question-container img {
+		max-width: 600px;
+	}
+
+	.rocket {
+		max-width: 500px !important;
+		margin-left: auto;
+    	margin-right: auto;
+	}
+
+	.quiz_begin {
+		margin: 0 10%;
+	}
+	
+
+	.quiz_section input[type="email"] {
+		width: 70% !important;
+	}
+
+	/*Results Tablet*/
+	.results-hero {
+		padding: 2em 6em 12em 6em;
+		align-items: center;
+	}
+
+	.qsm_contact_div {
+		text-align: center !important;
+	}
+
+	.qsm-submit-btn {
+		align-self: flex-start;
+	}
+	
+	.rocket {
+		top:-40%;
+	}
+	
+	.quizzes-container {
+		padding-top: 14em;
+	}
+
+	.entry-content {
+		grid-template-columns: repeat(3, auto);
+	}
+
+	.results-hero img {
+		max-width: 600px;
+	}
+	
+	.results-hero :nth-child(2) {
+		scale: 1.5;
+		margin-top: 6em;
+	}
+	
+	.level-container {
+		padding-bottom: 6.5em;
+	}
+	
+	.results-card-container {
+		padding: 4em 1.5em 3em 1.5em;
+	}
+	
+	.to-do-list {
+		font-size: 0.9em;
+		padding: 1rem 0.5rem 1rem 0.5rem;
+	}
+}
+
+/*Laptop*/
+@media only screen and (min-width: 1440px) { 
+	/*Home Laptop*/
+	.hero-section {
+		flex-direction: row;
+		justify-content: center;
+		padding: 6.5em 10em 2em 10em;
+		gap: 5em;
+	}
+
+	
+		
+	
+	.section-2 {
+		flex-direction: row;
+		justify-content: center;
+		padding: 5.5em 6em 7em 6em;
+		gap: 12em;
+	}
+	
+	.why-plums-container {
+		max-width: 485px;
+	}
+	
+	.card-container {
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+	
+	.btn-3 {
+		top: 84%;
+	}
+	
+	/*Question Laptop*/
+	.question-container {
+		justify-content: center;
+		flex-direction: row;
+		gap: 5em;
+		padding: 9.5em 5em 2.5em 5em;
+	}
+	
+	.question-card {
+		padding: 2em 1.5em 1em 1.5em;
+		box-shadow: 0px 2px 3px rgb(0 0 0 / 25%);
+		border-radius: 30px;
+		background-color: #E6E6E6;
+		min-height: 600px;
+		margin-bottom: 0;
+		
+	}
+	
+	.question-container img {
+		max-width: 840px;
+	}
+	
+	.btn-4 {
+    top: 84%;
+	}
+	
+	.progress-bar-container {
+		margin: 0em 0 1em 0;
+	}
+
+	/*Results Laptop*/
+	.results-hero {
+		flex-direction: row;
+		justify-content: center;
+		padding: 2em 6em 15em 6em;
+		gap: 2em;
+	}
+	
+	.results-hero img {
+		max-width: 700px;
+	}
+	
+	.results-hero :nth-child(2) {
+		scale: 1;
+		margin-top: 0;
+		content: url(../images/underline-word-big.svg) !important;
+		max-width: 500px;
+	}
+	
+	.results-container {
+		flex-direction: row;
+		padding: 11em 4em 8em 4em;
+	}
+	
+	.grade {
+		top: 10%;
+		left: 21%;
+	}
+	
+	.results-form-container {
+		flex-direction: row;
+		gap: 9em;
+		padding: 0 0 4em 0;
+	}
+	
+	.results-form-section {
+		margin-bottom: 0;
+	}
+	
+	.results-card {
+		padding-bottom: 1.5em;
+	}
+	
+	.results-form-section .submit {
+		margin: 2.5em 0 0 auto;
+	}
+	
+}
+
+/*Desktop*/
+@media only screen and (min-width: 1920px) { 
+	/*Home Desktop*/
+	.hero-section img {
+		max-width: 750px !important;
+	}
+	
+	.hero-section {
+		padding: 4.5em 10em 7em 10em
+	}
+	
+	.card-container {
+		justify-content: center;
+		gap: 7em;
+	}
+	
+	.card {
+		padding: 2em 1.5em 2em 1.5em;
+	}
+	
+	/*Question Desktop*/
+	.question-container img {
+		max-width: 54% !important;
+	}
+	
+	.question-container {
+		padding: 6em 5em 2.5em 5em;
+	}
+
+	/*Results Desktop*/
+	.results-hero {
+		padding: 2em 6em 12em 6em;
+	}
+
+	.rocket {
+		top:-38%;
+	}
+	
+	.results-hero img {
+		max-width: 750px;
+	}
+	
+	.results-hero :nth-child(2) {
+		max-width: 650px;
+	}
+	
+	.results-container {
+		gap: 0;
+	}
+	
+	.results-form-container {
+		padding: 0 0 8em 0;
+	}
+
+	.arrow-1 {
+		display: block;
+		padding-right: 0.5em;
+	}
+	
+	.arrow-2 {
+		display: block;
+		padding-right: 0.5em;
+	}
+	
+	.grade {
+		content: url(../images/start.svg);
+		left: 27%;
+	}
+}
+
+/*4k*/
+@media only screen and (min-width: 2560px) {
+	/*Question 4k*/
+	.question-container img {
+		max-width: 40% !important;
+	}
+	
+	.question-container {
+	    padding: 15.5em 5em 2.5em 5em;
+	}
+	
+	/*Results 4k*/
+	.results-container {
+		justify-content: center;
+	}
+	
+	
+}
